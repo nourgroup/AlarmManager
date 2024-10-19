@@ -18,8 +18,10 @@ class AlarmService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i("Project_Alarm","AlarmService:onStartCommand")
+        var i = 4;
         val th = Thread {
-            while (true){
+            while (i > 0){
+                i--
                 Thread.sleep(2000)
                 Log.i("Project_Alarm","AlarmService:onStartCommand:inside")
             }

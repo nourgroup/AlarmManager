@@ -19,9 +19,9 @@ class PowerModeReceiver : BroadcastReceiver() {
         //Toast.makeText(context, "execute at "+calendar.time, Toast.LENGTH_SHORT).show()
         // You can perform any task here, e.g., start a service or perform background work.
         val scheduler = AndroidAlarmScheduler(context)
-        val alarmItem = AlarmItem(LocalDateTime.now().plusSeconds(1100), "")
+        val alarmItem = AlarmItem(LocalDateTime.now().plusSeconds(10000), "")
 
-        when (intent?.action) {
+        when (intent.action) {
             Intent.ACTION_POWER_CONNECTED -> {
                 // Code to run when power is connected
                 Toast.makeText(context, "Power Connected", Toast.LENGTH_SHORT).show()
@@ -30,6 +30,7 @@ class PowerModeReceiver : BroadcastReceiver() {
             Intent.ACTION_POWER_DISCONNECTED -> {
                 // Code to run when power is disconnected
                 Toast.makeText(context, "Power Disconnected", Toast.LENGTH_SHORT).show()
+                scheduler.cancel()
             }
         }
     }

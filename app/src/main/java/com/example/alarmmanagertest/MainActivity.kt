@@ -71,7 +71,7 @@ fun DisplayButtons(modifier: Modifier = Modifier, scheduler: AndroidAlarmSchedul
             )
         }
         Button(onClick = {
-            scheduler.cancel(alarmItem)
+            scheduler.cancel()
         }) {
             Text(
                 text = "cancel",
