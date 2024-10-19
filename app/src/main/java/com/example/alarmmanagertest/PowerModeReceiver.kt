@@ -13,13 +13,9 @@ class PowerModeReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         // Code to be executed when the alarm triggers
-        //val calendar: Calendar = Calendar.getInstance()
-        //Log.i("Project_Alarm","execute at "+calendar.time);
-        //calendar.setTimeInMillis(System.currentTimeMillis())
-        //Toast.makeText(context, "execute at "+calendar.time, Toast.LENGTH_SHORT).show()
         // You can perform any task here, e.g., start a service or perform background work.
         val scheduler = AndroidAlarmScheduler(context)
-        val alarmItem = AlarmItem(LocalDateTime.now().plusSeconds(10000), "")
+        val alarmItem = AlarmItem(10_000, "PowerModeReceiver")
 
         when (intent.action) {
             Intent.ACTION_POWER_CONNECTED -> {

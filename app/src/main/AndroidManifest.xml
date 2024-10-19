@@ -29,14 +29,20 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
+        <receiver android:name=".DelegateBroadcastReceiver" />
         <service
             android:name=".AlarmService"
-            android:exported="true" />
+            android:exported="false" />
     </application>
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <!--
     If your app targets Android 13 (API level 33) or higher, you have the option to declare either the SCHEDULE_EXACT_ALARM or the USE_EXACT_ALARM permission.
     https://developer.android.com/develop/background-work/services/alarms/schedule
+    Android 13 (API level 33)
+    Android 12 (API level 32)
+    Android 12 (API level 31)
+    Android 11 (API level 30)
+    Android 10 (API level 29)
     -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 

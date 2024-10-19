@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DisplayButtons(modifier: Modifier = Modifier, scheduler: AndroidAlarmScheduler) {
-    val alarmItem = AlarmItem(LocalDateTime.now().plusSeconds(1100), "")
+    val alarmItem = AlarmItem(10000, "")
     Column {
         Button(onClick = {
             scheduler.schedule(alarmItem)
